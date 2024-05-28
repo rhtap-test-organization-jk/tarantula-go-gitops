@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  argocd/app-name: tarantula-go
+  janus-idp.io/tekton: tarantula-go
+  backstage.io/kubernetes-id: tarantula-go
+  backstage.io/kubernetes-namespace: rhtap-test-organization-jk 
+  app.kubernetes.io/part-of: tarantula-go
+resources:
+- deployment.yaml
+- route.yaml
+- service.yaml
